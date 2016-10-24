@@ -1,1 +1,0 @@
-# CloudApplications_AugmentedReality
