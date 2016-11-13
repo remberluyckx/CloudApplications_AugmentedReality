@@ -2,9 +2,9 @@
 
 
 angular
-.module( 'ar-webend', [] )
+.module( 'ar-webend', ["xeditable"] )
 .service( 'deepstream', function() {
-	return deepstream( '192.168.10.241:6020' )
+	return deepstream( 'localhost:6020' )
 		.login( {username: 'devuser'} );
 })
 .service( 'bindFields', function(){
@@ -34,7 +34,7 @@ angular
 
 	var fields = [
             'title',
-			answers[
+			'answers'[
                 'number',
                 'text'
             ]
@@ -74,7 +74,10 @@ angular
 			.record
 			.getRecord( name )
 			.set({
-				title: 'New Question'
+				title: 'New Question',
+				answers: [
+					{'number' : 10, 'text' : 'testext'}
+				]
 			});
 
 		list.addEntry( name );
