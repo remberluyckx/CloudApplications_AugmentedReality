@@ -2,12 +2,93 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.rember.testapp.NewQuestionFragment">
+    tools:context="com.example.rember.testapp.NewQuestionFragment"
+    android:background="@android:color/holo_blue_light"
+    android:minHeight="185dp">
 
     <!-- TODO: Update blank fragment layout -->
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Answer 5"
+        android:ems="10"
+        android:id="@+id/editText6"
+        android:background="@android:color/background_light"
+        android:layout_marginTop="400dp"
+        android:layout_marginLeft="50dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Answer 4"
+        android:ems="10"
+        android:id="@+id/editText5"
+        android:background="@android:color/background_light"
+        android:layout_marginTop="350dp"
+        android:layout_marginLeft="50dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Answer 3"
+        android:ems="10"
+        android:id="@+id/editText4"
+        android:background="@android:color/background_light"
+        android:layout_marginTop="300dp"
+        android:layout_marginLeft="50dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Answer 2"
+        android:ems="10"
+        android:id="@+id/editText3"
+        android:background="@android:color/background_light"
+        android:layout_marginTop="250dp"
+        android:layout_marginLeft="50dp" />
+
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="New Question" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Question"
+        android:textColor="@android:color/background_dark"
+        android:textSize="30sp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="15dp" />
+
+    <EditText
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:ems="10"
+        android:id="@+id/editText"
+        android:background="@android:color/background_light"
+        android:layout_marginTop="80dp"
+        android:height="80dp"
+        android:text="Question"
+        android:layout_marginLeft="10dp"
+        android:layout_width="305dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Answer 1"
+        android:ems="10"
+        android:id="@+id/editText2"
+        android:background="@android:color/background_light"
+        android:layout_marginTop="200dp"
+        android:layout_marginLeft="50dp" />
+
+    <Button
+        android:text="Create"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button"
+        android:layout_marginTop="450dp"
+        android:layout_marginLeft="105dp" />
 
 </FrameLayout>

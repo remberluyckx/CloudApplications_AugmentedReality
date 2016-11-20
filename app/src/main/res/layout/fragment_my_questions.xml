@@ -2,21 +2,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.rember.testapp.MyQuestionsFragment">
+    tools:context="com.example.rember.testapp.MyQuestionsFragment"
+    android:background="@android:color/holo_blue_light">
 
     <!-- TODO: Update blank fragment layout -->
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="ey boi"
-        android:id="@+id/txtTest" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="My questions"
+        android:id="@+id/txtTest"
+        android:background="@android:color/holo_blue_light"
+        android:textColor="@android:color/black"
+        android:textSize="30sp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="15dp" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="click me"
         android:layout_marginLeft="100dp"
-        android:id="@+id/btnTest" />
+        android:id="@+id/btnTest"
+        android:layout_marginTop="200dp" />
 
 </FrameLayout>
