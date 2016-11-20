@@ -47,15 +47,18 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
         //to open fragment on startup
-        Fragment fragment = new MyQuestionsFragment();
+        Fragment fragment = new NewQuestionFragment();
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction()
                 .replace(R.id.frame_container, fragment).commit();
     }
+
     @Override
     public void onFragmentInteraction(Uri uri) {
         // Do different stuff
     }
+
+
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

@@ -11,45 +11,23 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="Answer 5"
         android:ems="10"
-        android:id="@+id/editText6"
+        android:id="@+id/editA5"
         android:background="@android:color/background_light"
         android:layout_marginTop="400dp"
-        android:layout_marginLeft="50dp" />
+        android:layout_marginLeft="50dp"
+        android:hint="Answer 5" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="Answer 4"
         android:ems="10"
-        android:id="@+id/editText5"
-        android:background="@android:color/background_light"
-        android:layout_marginTop="350dp"
-        android:layout_marginLeft="50dp" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="Answer 3"
-        android:ems="10"
-        android:id="@+id/editText4"
+        android:id="@+id/editA3"
         android:background="@android:color/background_light"
         android:layout_marginTop="300dp"
-        android:layout_marginLeft="50dp" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="Answer 2"
-        android:ems="10"
-        android:id="@+id/editText3"
-        android:background="@android:color/background_light"
-        android:layout_marginTop="250dp"
-        android:layout_marginLeft="50dp" />
+        android:layout_marginLeft="50dp"
+        android:hint="Answer 3" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -58,37 +36,60 @@
         android:textColor="@android:color/background_dark"
         android:textSize="30sp"
         android:layout_marginLeft="80dp"
-        android:layout_marginTop="15dp" />
+        android:layout_marginTop="15dp"
+        android:id="@+id/txtTitle" />
 
     <EditText
         android:layout_height="wrap_content"
         android:inputType="textMultiLine"
         android:ems="10"
-        android:id="@+id/editText"
+        android:id="@+id/editQuestion"
         android:background="@android:color/background_light"
         android:layout_marginTop="80dp"
         android:height="80dp"
-        android:text="Question"
         android:layout_marginLeft="10dp"
-        android:layout_width="305dp" />
+        android:layout_width="305dp"
+        android:hint="Question" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="Answer 1"
         android:ems="10"
-        android:id="@+id/editText2"
+        android:id="@+id/editA1"
         android:background="@android:color/background_light"
         android:layout_marginTop="200dp"
-        android:layout_marginLeft="50dp" />
+        android:layout_marginLeft="50dp"
+        android:hint="Answer 1" />
 
     <Button
         android:text="Create"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/button"
+        android:id="@+id/btnCreate"
         android:layout_marginTop="450dp"
         android:layout_marginLeft="105dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/editA2"
+        android:background="@android:color/background_light"
+        android:layout_marginTop="250dp"
+        android:layout_marginLeft="50dp"
+        android:hint="Answer 2" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/editA4"
+        android:background="@android:color/background_light"
+        android:layout_marginTop="350dp"
+        android:layout_marginLeft="50dp"
+        android:hint="Answer 4" />
 
 </FrameLayout>

@@ -8,8 +8,12 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.TextView;
+
+import static android.R.layout.simple_list_item_1;
 
 
 /**
@@ -26,6 +30,7 @@ public class MyQuestionsFragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
     TextView txt;
+    ListView listview;
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
@@ -74,7 +79,13 @@ public class MyQuestionsFragment extends Fragment {
         txt = (TextView) v.findViewById(R.id.txtTest);
         Button btn = (Button) v.findViewById(R.id.btnTest);
 
-        btn.setOnClickListener(new View.OnClickListener() {
+        String[] array = new String[50];
+        for (int i = 0; i < 50; i++) { array[i] = "" + i; }
+        ((ListView) v.findViewById(R.id.listQuestions)).setAdapter(
+                new ArrayAdapter<String>(v.getContext(), android.R.layout.simple_list_item_1, array));
+
+
+        /*btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 switch (v.getId()) {
@@ -84,7 +95,7 @@ public class MyQuestionsFragment extends Fragment {
                 }
             }
         });
-
+        */
         return v;
     }
 

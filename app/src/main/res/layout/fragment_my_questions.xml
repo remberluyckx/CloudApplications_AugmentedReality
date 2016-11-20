@@ -21,9 +21,18 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="click me"
-        android:layout_marginLeft="100dp"
+        android:text="test"
         android:id="@+id/btnTest"
-        android:layout_marginTop="200dp" />
+        android:layout_marginLeft="280dp"
+        android:layout_marginTop="10dp"
+        android:textSize="8sp"
+        android:minWidth="50dip" />
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/background_light"
+        android:layout_marginTop="75dp"
+        android:id="@+id/listQuestions" />
 
 </FrameLayout>

@@ -8,6 +8,9 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Scan" />
+        android:text="Scan"
+        android:background="@android:color/holo_blue_light"
+        android:textColor="@android:color/background_dark"
+        android:textSize="30sp" />
 
 </FrameLayout>
