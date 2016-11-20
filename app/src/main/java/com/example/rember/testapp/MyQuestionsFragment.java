@@ -77,10 +77,9 @@ public class MyQuestionsFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_my_questions, container, false);
 
         txt = (TextView) v.findViewById(R.id.txtTest);
-        Button btn = (Button) v.findViewById(R.id.btnTest);
 
-        String[] array = new String[50];
-        for (int i = 0; i < 50; i++) { array[i] = "" + i; }
+        String[] array = new String[10];
+        for (int i = 0; i < 10; i++) { array[i] = "Question " + i; }
         ((ListView) v.findViewById(R.id.listQuestions)).setAdapter(
                 new ArrayAdapter<String>(v.getContext(), android.R.layout.simple_list_item_1, array));
 
