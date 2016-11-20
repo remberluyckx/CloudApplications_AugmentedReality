@@ -18,7 +18,7 @@ import android.view.MenuItem;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, MyQuestionsFragment.OnFragmentInteractionListener {
+        implements NavigationView.OnNavigationItemSelectedListener, MyQuestionsFragment.OnFragmentInteractionListener, NewQuestionFragment.OnFragmentInteractionListener, ScanFragment.OnFragmentInteractionListener {
 
 
 
@@ -46,8 +46,11 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
-
+        //to open fragment on startup
+        Fragment fragment = new MyQuestionsFragment();
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction()
+                .replace(R.id.frame_container, fragment).commit();
     }
     @Override
     public void onFragmentInteraction(Uri uri) {
@@ -92,11 +95,11 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
         Fragment fragment = null;
         if (id == R.id.nav_camera) {
-
+            fragment = new ScanFragment();
         } else if (id == R.id.nav_gallery) {
             fragment = new MyQuestionsFragment();
         } else if (id == R.id.nav_slideshow) {
-
+            fragment = new NewQuestionFragment();
         }
 
         if (fragment != null) {
