@@ -4,6 +4,7 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -96,6 +97,7 @@ public class NewQuestionFragment extends Fragment {
                         String a4 = editAnswer4.getText().toString();
                         String a5 = editAnswer5.getText().toString();
                         Question newQuestion = new Question(question, a1, a2, a3, a4, a5);
+
                         CharSequence text = "Question created!";
                         int duration = Toast.LENGTH_SHORT;
                         Toast toast = Toast.makeText(v.getContext(), text, duration);
