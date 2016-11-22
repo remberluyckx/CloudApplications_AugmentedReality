@@ -34,10 +34,7 @@ angular
 
 	var fields = [
             'title',
-			'answers'[
-                'number',
-                'text'
-            ]
+			'answers'
 		];
 	var record = deepstream.record.getAnonymousRecord();
 
