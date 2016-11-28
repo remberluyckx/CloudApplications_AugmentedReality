@@ -1,6 +1,7 @@
 package com.example.rember.testapp;
 
 import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -12,6 +13,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import static android.content.Context.MODE_PRIVATE;
 
 
 /**
@@ -102,6 +105,8 @@ public class NewQuestionFragment extends Fragment {
                         int duration = Toast.LENGTH_SHORT;
                         Toast toast = Toast.makeText(v.getContext(), text, duration);
                         toast.show();
+
+                        mListener.onButtonClicked(newQuestion);
                         break;
                 }
             }
@@ -111,9 +116,10 @@ public class NewQuestionFragment extends Fragment {
     }
 
     // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
+    public void onButtonPressed(Question question) {
         if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
+            //mListener.onFragmentInteraction(uri);
+            mListener.onButtonClicked(question);
         }
     }
 
@@ -146,6 +152,7 @@ public class NewQuestionFragment extends Fragment {
      */
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
-        void onFragmentInteraction(Uri uri);
+        //void onFragmentInteraction(Uri uri);
+        void onButtonClicked(Question question);
     }
 }

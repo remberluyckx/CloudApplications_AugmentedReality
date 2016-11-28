@@ -13,7 +13,6 @@ public class Question {
         this.answer3  = answer3;
         this.answer4 = answer4;
         this.answer5 = answer5;
-        //ni zeker of dit klopt, miss omdraaien
     }
 
     private String question = null;

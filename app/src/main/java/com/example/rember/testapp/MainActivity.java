@@ -1,5 +1,7 @@
 package com.example.rember.testapp;
 
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -16,10 +18,12 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, MyQuestionsFragment.OnFragmentInteractionListener, NewQuestionFragment.OnFragmentInteractionListener, ScanFragment.OnFragmentInteractionListener {
 
+    SQLiteDatabase mydatabase;
 
 
     @Override
@@ -51,11 +55,29 @@ public class MainActivity extends AppCompatActivity
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction()
                 .replace(R.id.frame_container, fragment).commit();
+
+        mydatabase = openOrCreateDatabase("questionsDB",MODE_PRIVATE,null);
+        mydatabase.execSQL("CREATE TABLE IF NOT EXISTS Questions(Question VARCHAR,Answer1 VARCHAR,Answer2 VARCHAR,Answer3 VARCHAR,Answer4 VARCHAR,Answer5 VARCHAR);");
+        /*Cursor resultSet = mydatabase.rawQuery("Select * from questionsDB",null);
+        resultSet.moveToFirst();
+        String question = resultSet.getString(1);
+        String answer1 = resultSet.getString(2);
+        String answer2 = resultSet.getString(3);
+        String answer3 = resultSet.getString(4);
+        String answer4 = resultSet.getString(5);
+        String answer5 = resultSet.getString(6);
+        */
+
     }
 
     @Override
     public void onFragmentInteraction(Uri uri) {
         // Do different stuff
+        CharSequence text = "hey!";
+        int duration = Toast.LENGTH_SHORT;
+        Toast toast = Toast.makeText(getApplicationContext(), text, duration);
+        toast.show();
+
     }
 
 
@@ -114,6 +136,14 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    public void onButtonClicked(Question question) {
+        CharSequence text = question.getQuestion();
+        int duration = Toast.LENGTH_SHORT;
+        Toast toast = Toast.makeText(getApplicationContext(), text, duration);
+        toast.show();
+        mydatabase.execSQL("INSERT INTO Questions VALUES(question.getQuestion(),question.getAnswer1(),question.getAnswer2(),question.getAnswer3(),question.getAnswer4(),question.getAnswer5());");
     }
 
 }
