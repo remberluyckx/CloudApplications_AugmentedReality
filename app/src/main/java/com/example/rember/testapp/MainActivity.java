@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, MyQuestionsFragment.OnFragmentInteractionListener, NewQuestionFragment.OnFragmentInteractionListener, ScanFragment.OnFragmentInteractionListener {
 
     SQLiteDatabase mydatabase;
-
+    //DBHandler dbHandler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,17 +57,8 @@ public class MainActivity extends AppCompatActivity
                 .replace(R.id.frame_container, fragment).commit();
 
         mydatabase = openOrCreateDatabase("questionsDB",MODE_PRIVATE,null);
-        mydatabase.execSQL("CREATE TABLE IF NOT EXISTS Questions(Question VARCHAR,Answer1 VARCHAR,Answer2 VARCHAR,Answer3 VARCHAR,Answer4 VARCHAR,Answer5 VARCHAR);");
-        /*Cursor resultSet = mydatabase.rawQuery("Select * from questionsDB",null);
-        resultSet.moveToFirst();
-        String question = resultSet.getString(1);
-        String answer1 = resultSet.getString(2);
-        String answer2 = resultSet.getString(3);
-        String answer3 = resultSet.getString(4);
-        String answer4 = resultSet.getString(5);
-        String answer5 = resultSet.getString(6);
-        */
-
+        mydatabase.execSQL("CREATE TABLE IF NOT EXISTS Questions(Question TEXT,Answer1 TEXT,Answer2 TEXT,Answer3 TEXT,Answer4 TEXT,Answer5 TEXT);");
+        ///dbHandler = new DBHandler(this);
     }
 
     @Override
@@ -143,7 +134,16 @@ public class MainActivity extends AppCompatActivity
         int duration = Toast.LENGTH_SHORT;
         Toast toast = Toast.makeText(getApplicationContext(), text, duration);
         toast.show();
-        mydatabase.execSQL("INSERT INTO Questions VALUES(question.getQuestion(),question.getAnswer1(),question.getAnswer2(),question.getAnswer3(),question.getAnswer4(),question.getAnswer5());");
+        String testvar1 = "Question1";
+        String testvar2 = "a1";
+        String testvar3 = "a2";
+        String testvar4 = "a3";
+        String testvar5 = "a4";
+        String testvar6 = "a5";
+
+        ///dbHandler.addQuestion(new Question(dbHandler.getQuestionsCount()+1, testvar1, testvar2, testvar3, testvar4, testvar5, testvar6));
+        mydatabase.execSQL("INSERT INTO Questions VALUES ('" + question.getQuestion() + "','" + testvar2 + "','\" + testvar3 + \"','\" + testvar4 + \"','\" + testvar5 + \"','\" + testvar6 + \"');");
+        //mydatabase.execSQL("INSERT INTO Questions [(Question, Answer1, Answer2, Answer3, Answer4, Answer5)] VALUES ("+testvar1+","+testvar2+","+testvar3+","+testvar4+","+testvar5+","+testvar6+");");
     }
 
 }

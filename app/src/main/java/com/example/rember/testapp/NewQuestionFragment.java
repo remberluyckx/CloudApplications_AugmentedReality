@@ -93,13 +93,15 @@ public class NewQuestionFragment extends Fragment {
             public void onClick(View v) {
                 switch (v.getId()) {
                     case R.id.btnCreate:
+                        MainActivity mainActivity = (MainActivity)getActivity();
+                        ///int count = mainActivity.dbHandler.getQuestionsCount() + 1;
                         String question = editQuestion.getText().toString();
                         String a1 = editAnswer1.getText().toString();
                         String a2 = editAnswer2.getText().toString();
                         String a3 = editAnswer3.getText().toString();
                         String a4 = editAnswer4.getText().toString();
                         String a5 = editAnswer5.getText().toString();
-                        Question newQuestion = new Question(question, a1, a2, a3, a4, a5);
+                        Question newQuestion = new Question(/*count, */question, a1, a2, a3, a4, a5);
 
                         CharSequence text = "Question created!";
                         int duration = Toast.LENGTH_SHORT;

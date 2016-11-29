@@ -3,9 +3,11 @@ package com.example.rember.testapp;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +16,9 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static android.R.layout.simple_list_item_1;
 
@@ -81,10 +86,29 @@ public class MyQuestionsFragment extends Fragment {
 
         txt = (TextView) v.findViewById(R.id.txtTest);
         listview = (ListView) v.findViewById(R.id.listQuestions);
-        String[] array = new String[10];
+        //to access database from mainactivity
+        MainActivity mainActivity = (MainActivity)getActivity();
+
+        Cursor resultSet = mainActivity.mydatabase.rawQuery("Select * from Questions",null);
+        ///Cursor resultSet = mainActivity.dbHandler.getReadableDatabase().rawQuery("Select * from Questions",null);
+
+        List<String> questionsList = new ArrayList<String>();
+
+        if (resultSet.moveToFirst()) {
+            do {
+                String question = resultSet.getString(0);
+                questionsList.add(question);
+
+            } while (resultSet.moveToNext());
+        }
+
+        ((ListView) v.findViewById(R.id.listQuestions)).setAdapter(
+                new ArrayAdapter<String>(v.getContext(), android.R.layout.simple_list_item_1, questionsList));
+
+        /*String[] array = new String[10];
         for (int i = 0; i < 10; i++) { array[i] = "Question " + i; }
         ((ListView) v.findViewById(R.id.listQuestions)).setAdapter(
-                new ArrayAdapter<String>(v.getContext(), android.R.layout.simple_list_item_1, array));
+                new ArrayAdapter<String>(v.getContext(), android.R.layout.simple_list_item_1, array));*/
 
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -96,17 +120,7 @@ public class MyQuestionsFragment extends Fragment {
 
             }
         });
-        /*btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                switch (v.getId()) {
-                    case R.id.btnTest:
-                        txt.setText("works");
-                        break;
-                }
-            }
-        });
-        */
+
         return v;
     }
 
