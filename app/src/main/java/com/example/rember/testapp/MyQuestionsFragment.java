@@ -89,14 +89,14 @@ public class MyQuestionsFragment extends Fragment {
         //to access database from mainactivity
         MainActivity mainActivity = (MainActivity)getActivity();
 
-        Cursor resultSet = mainActivity.mydatabase.rawQuery("Select * from Questions",null);
-        ///Cursor resultSet = mainActivity.dbHandler.getReadableDatabase().rawQuery("Select * from Questions",null);
+        //Cursor resultSet = mainActivity.mydatabase.rawQuery("Select * from Questions",null);
+        Cursor resultSet = mainActivity.dbHandler.getReadableDatabase().rawQuery("Select * from Questions",null);
 
         List<String> questionsList = new ArrayList<String>();
 
         if (resultSet.moveToFirst()) {
             do {
-                String question = resultSet.getString(0);
+                String question = resultSet.getString(1);
                 questionsList.add(question);
 
             } while (resultSet.moveToNext());

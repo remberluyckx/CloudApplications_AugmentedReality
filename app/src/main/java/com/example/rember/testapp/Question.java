@@ -6,8 +6,8 @@ package com.example.rember.testapp;
 
 public class Question {
 
-    public Question(/*int id, */String question, String answer1, String answer2, String answer3, String answer4, String answer5) {
-        ///this.id = id;
+    public Question(int id, String question, String answer1, String answer2, String answer3, String answer4, String answer5) {
+        this.id = id;
         this.question = question;
         this.answer1 = answer1;
         this.answer2 = answer2;
@@ -20,8 +20,9 @@ public class Question {
 
     }
 
-    ///private int id;
-    //public void setId(int id) {this.id = id;}
+    private int id;
+    public void setId(int id) {this.id = id;}
+    public int getId() {return id;}
 
     private String question;
     public void setQuestion(String question) {

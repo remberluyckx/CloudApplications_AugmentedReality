@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, MyQuestionsFragment.OnFragmentInteractionListener, NewQuestionFragment.OnFragmentInteractionListener, ScanFragment.OnFragmentInteractionListener {
 
     SQLiteDatabase mydatabase;
-    //DBHandler dbHandler;
+    DBHandler dbHandler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity
 
         mydatabase = openOrCreateDatabase("questionsDB",MODE_PRIVATE,null);
         mydatabase.execSQL("CREATE TABLE IF NOT EXISTS Questions(Question TEXT,Answer1 TEXT,Answer2 TEXT,Answer3 TEXT,Answer4 TEXT,Answer5 TEXT);");
-        ///dbHandler = new DBHandler(this);
+        dbHandler = new DBHandler(this);
     }
 
     @Override
@@ -130,20 +130,15 @@ public class MainActivity extends AppCompatActivity
     }
 
     public void onButtonClicked(Question question) {
-        CharSequence text = question.getQuestion();
-        int duration = Toast.LENGTH_SHORT;
-        Toast toast = Toast.makeText(getApplicationContext(), text, duration);
-        toast.show();
-        String testvar1 = "Question1";
-        String testvar2 = "a1";
-        String testvar3 = "a2";
-        String testvar4 = "a3";
-        String testvar5 = "a4";
-        String testvar6 = "a5";
+        String myquestion = question.getQuestion();
+        String answer1 = question.getAnswer1();
+        String answer2 = question.getAnswer2();
+        String answer3 = question.getAnswer3();
+        String answer4 = question.getAnswer4();
+        String answer5 = question.getAnswer5();
 
-        ///dbHandler.addQuestion(new Question(dbHandler.getQuestionsCount()+1, testvar1, testvar2, testvar3, testvar4, testvar5, testvar6));
-        mydatabase.execSQL("INSERT INTO Questions VALUES ('" + question.getQuestion() + "','" + testvar2 + "','\" + testvar3 + \"','\" + testvar4 + \"','\" + testvar5 + \"','\" + testvar6 + \"');");
-        //mydatabase.execSQL("INSERT INTO Questions [(Question, Answer1, Answer2, Answer3, Answer4, Answer5)] VALUES ("+testvar1+","+testvar2+","+testvar3+","+testvar4+","+testvar5+","+testvar6+");");
+        dbHandler.addQuestion(new Question(dbHandler.getQuestionsCount()+1, myquestion, answer1, answer2, answer3, answer4, answer5));
+        //mydatabase.execSQL("INSERT INTO Questions VALUES ('" + question.getQuestion() + "','" + testvar2 + "','\" + testvar3 + \"','\" + testvar4 + \"','\" + testvar5 + \"','\" + testvar6 + \"');");
     }
 
 }

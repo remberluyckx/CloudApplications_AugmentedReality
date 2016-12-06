@@ -13,13 +13,13 @@ import java.util.List;
  * Created by Rember on 29/11/2016.
  */
 
-/*public class DBHandler extends SQLiteOpenHelper {
+public class DBHandler extends SQLiteOpenHelper {
     // Database Version
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 2;
     // Database Name
     private static final String DATABASE_NAME = "MyQuestions";
     // Contacts table name
-    private static final String TABLE_QUESTIONS = "questions";
+    private static final String TABLE_QUESTIONS = "Questions";
     // Shops Table Columns names
     private static final String KEY_ID = "id";
     private static final String KEY_QUESTION = "question";
@@ -35,10 +35,10 @@ import java.util.List;
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String CREATE_CONTACTS_TABLE = "CREATE TABLE " + TABLE_QUESTIONS + "("
+        String CREATE_QUESTIONS_TABLE = "CREATE TABLE " + TABLE_QUESTIONS + "("
         + KEY_ID + " INTEGER PRIMARY KEY," + KEY_QUESTION + " TEXT," + KEY_ANSWER1 + " TEXT,"
-        + KEY_ANSWER2 + " TEXT" + KEY_ANSWER3 + " TEXT" + KEY_ANSWER4 + " TEXT" + KEY_ANSWER5 + " TEXT" + ")";
-        db.execSQL(CREATE_CONTACTS_TABLE);
+        + KEY_ANSWER2 + " TEXT," + KEY_ANSWER3 + " TEXT," + KEY_ANSWER4 + " TEXT," + KEY_ANSWER5 + " TEXT" + ")";
+        db.execSQL(CREATE_QUESTIONS_TABLE);
     }
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
@@ -53,6 +53,8 @@ import java.util.List;
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
+        //values.put(KEY_ID, question.getId());
+
         values.put(KEY_QUESTION, question.getQuestion()); // Shop Name
         values.put(KEY_ANSWER1, question.getAnswer1()); // Shop Phone Number
         values.put(KEY_ANSWER2, question.getAnswer2()); // Shop Phone Number
@@ -124,4 +126,4 @@ import java.util.List;
         new String[] { String.valueOf(question.getId()) });
         db.close();
     }
-}*/
+}
