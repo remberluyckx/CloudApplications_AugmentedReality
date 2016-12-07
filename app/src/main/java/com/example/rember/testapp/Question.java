@@ -1,10 +1,12 @@
 package com.example.rember.testapp;
 
+import java.io.Serializable;
+
 /**
  * Created by Rember on 20/11/2016.
  */
 
-public class Question {
+public class Question implements Serializable{
 
     public Question(int id, String question, String answer1, String answer2, String answer3, String answer4, String answer5) {
         this.id = id;

@@ -14,7 +14,7 @@
         android:text="Question 1: blablabla"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textView2"
+        android:id="@+id/questionView"
         android:textColor="@android:color/background_dark"
         android:textSize="30sp"
         android:layout_centerHorizontal="true"
@@ -24,11 +24,11 @@
         android:text="Answer 2: blablabla (20%)"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView3"
+        android:layout_below="@+id/answer1View"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="32dp"
-        android:id="@+id/textView4"
+        android:id="@+id/answer2View"
         android:textSize="15sp"
         android:textColor="@android:color/background_dark" />
 
@@ -37,10 +37,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="34dp"
-        android:id="@+id/textView5"
+        android:id="@+id/answer3View"
         android:textColor="@android:color/background_dark"
         android:textSize="15sp"
-        android:layout_below="@+id/textView4"
+        android:layout_below="@+id/answer2View"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -49,10 +49,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:id="@+id/textView6"
+        android:id="@+id/answer4View"
         android:textSize="15sp"
         android:textColor="@android:color/background_dark"
-        android:layout_below="@+id/textView5"
+        android:layout_below="@+id/answer3View"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -60,11 +60,11 @@
         android:text="Answer 5: blablabla (20%)"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView6"
+        android:layout_below="@+id/answer4View"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="39dp"
-        android:id="@+id/textView7"
+        android:id="@+id/answer5View"
         android:textSize="15sp"
         android:textColor="@android:color/background_dark" />
 
@@ -73,10 +73,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
-        android:id="@+id/textView3"
+        android:id="@+id/answer1View"
         android:textSize="15sp"
         android:textColor="@android:color/background_dark"
-        android:layout_below="@+id/textView2"
+        android:layout_below="@+id/questionView"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 </RelativeLayout>

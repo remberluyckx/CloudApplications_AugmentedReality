@@ -93,7 +93,7 @@ public class DBHandler extends SQLiteOpenHelper {
         if (cursor.moveToFirst()) {
             do {
                 Question question = new Question();
-                question.setId(Integer.parseInt(cursor.getString(0)));
+                //question.setId(Integer.parseInt(cursor.getString(0)));
                 question.setQuestion(cursor.getString(1));
                 question.setAnswer1(cursor.getString(2));
                 question.setAnswer2(cursor.getString(3));

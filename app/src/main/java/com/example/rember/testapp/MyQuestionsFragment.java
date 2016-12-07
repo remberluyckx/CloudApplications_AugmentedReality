@@ -91,19 +91,25 @@ public class MyQuestionsFragment extends Fragment {
 
         //Cursor resultSet = mainActivity.mydatabase.rawQuery("Select * from Questions",null);
         Cursor resultSet = mainActivity.dbHandler.getReadableDatabase().rawQuery("Select * from Questions",null);
-
-        List<String> questionsList = new ArrayList<String>();
+        //final List<Question> questionListt = new ArrayList<Question>();
+        final List<String> titleList = new ArrayList<String>();
 
         if (resultSet.moveToFirst()) {
             do {
                 String question = resultSet.getString(1);
-                questionsList.add(question);
-
+                String answer1 = resultSet.getString(2);
+                String answer2 = resultSet.getString(3);
+                String answer3 = resultSet.getString(4);
+                String answer4 = resultSet.getString(5);
+                String answer5 = resultSet.getString(6);
+                //Question myQ = new Question(question, answer1, answer2, answer3, answer4, answer5);
+                titleList.add(question);
+                //questionListt.add(myQ);
             } while (resultSet.moveToNext());
         }
 
         ((ListView) v.findViewById(R.id.listQuestions)).setAdapter(
-                new ArrayAdapter<String>(v.getContext(), android.R.layout.simple_list_item_1, questionsList));
+                new ArrayAdapter<String>(v.getContext(), android.R.layout.simple_list_item_1, titleList));
 
         /*String[] array = new String[10];
         for (int i = 0; i < 10; i++) { array[i] = "Question " + i; }
@@ -114,7 +120,7 @@ public class MyQuestionsFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
                 Intent i = new Intent(v.getContext(), DetailActivity.class);
-                i.putExtra("selectedQuestion", position);
+                i.putExtra("selectedQuestion", position/*titleList.get(position)*/);
                 //i.putExtra("selectedPlayer", players[position]);
                 startActivity(i);
 
