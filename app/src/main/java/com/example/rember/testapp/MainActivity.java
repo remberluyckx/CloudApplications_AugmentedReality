@@ -21,7 +21,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, MyQuestionsFragment.OnFragmentInteractionListener, NewQuestionFragment.OnFragmentInteractionListener, ScanFragment.OnFragmentInteractionListener {
+        implements NavigationView.OnNavigationItemSelectedListener, MyQuestionsFragment.OnFragmentInteractionListener, NewQuestionFragment.OnFragmentInteractionListener {
 
     SQLiteDatabase mydatabase;
     DBHandler dbHandler;
@@ -110,9 +110,7 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
         Fragment fragment = null;
-        if (id == R.id.nav_camera) {
-            fragment = new ScanFragment();
-        } else if (id == R.id.nav_gallery) {
+        if (id == R.id.nav_gallery) {
             fragment = new MyQuestionsFragment();
         } else if (id == R.id.nav_slideshow) {
             fragment = new NewQuestionFragment();

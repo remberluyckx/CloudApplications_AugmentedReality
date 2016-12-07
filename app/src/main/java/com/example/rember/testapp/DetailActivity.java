@@ -57,7 +57,8 @@ public class DetailActivity extends AppCompatActivity {
         scan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent i = new Intent(v.getContext(), ScanActivity.class);
+                startActivity(i);
             }
         });
     }
