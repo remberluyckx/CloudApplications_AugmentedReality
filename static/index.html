@@ -25,9 +25,8 @@
 	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-xeditable/0.5.0/css/xeditable.min.css" />
 </head>
-<body>
-    <script src='js/script.js'></script>
 <body ng-app="ar-webend">
+<script src='js/script.js'></script>
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
         <div class="navbar-header">
@@ -64,7 +63,7 @@
 						<span ng-bind="user.get('firstname')"></span>
 						<span ng-bind="user.get('lastname')"></span>
 				    	</em-->
-              <a href='#' ng-bind="question.get('title')">
+              <a href='#' ng-bind="question.get('title')"></a>
 			    		<div class="delete-button fa fa-remove" ng-click="deleteUser( user.name )"></div>
 			    	</li>
           </ul>
@@ -118,29 +117,23 @@
             </div>
           </div-->
 
-          <h2 class="sub-header">{{ title }}</h2>
-          <div class="table-responsive">
-            <table class="table table-striped">
-              <thead>
-                <tr>
-                  <th>#</th>
-                  <th>Answer</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr ng-repeat="answer in answers">
-                  <td>{{ answer.number }}</td>
-                  <td>{{ answer.text }}</td>
-                </tr>
-                <tr>
-                  <td>1</td>
-                  <td>Answer sample</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+          <h2 class="sub-header"><a href="#" editable-text="title">{{ title }}</a></h2>
+            <div id="view" ng-hide="editable">
+            <div ng-repeat="answer in answers">
+              <p>{{ answer.number + ":  " + answer.text }}</p>
+            </div>
+            </div>
+
+            <div id="edit" ng-show="editable">
+            <div ng-repeat="answer in answers">
+                {{ answer.number + ":  "}}<input type="text" placeholder="{{ answer.text }}">
+            </div>
+            </div>
+
+            <button type="button" class="btn btn-default" ng-click="makeEditable()">Edit</button>
+
+            </div>
         </div>
       </div>
-    </div>
 </body>
 </html>

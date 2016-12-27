@@ -3,6 +3,9 @@
 
 angular
 .module( 'ar-webend', ["xeditable"] )
+.run(function(editableOptions) {
+	editableOptions.theme = 'bs3'; // bootstrap3 theme. Can be also 'bs2', 'default'
+})
 .service( 'deepstream', function() {
 	return deepstream( 'localhost:6020' )
 		.login( {username: 'devuser'} );
@@ -36,6 +39,9 @@ angular
             'title',
 			'answers'
 		];
+
+	$scope.editable = true;
+
 	var record = deepstream.record.getAnonymousRecord();
 
 	bindFields( $scope, record, fields );
@@ -44,6 +50,19 @@ angular
 		$scope.name = recordName;
 		record.setName( recordName );
 	});
+
+	$scope.makeEditable = function() {
+		$scope.editable = !$scope.editable;
+		console.log("hello");
+		console.log($scope.editable);
+	}
+
+	/*$scope.blablas = [
+		{'number' : 1, 'text' : 'bla 1'},
+		{'number' : 2, 'text' : 'bla 2'},
+		{'number' : 3, 'text' : 'bla 3'}
+	]*/
+
 })
 .controller( 'questions', function( $scope, deepstream ){
 	var list = deepstream.record.getList( 'questions' );
@@ -73,7 +92,9 @@ angular
 			.set({
 				title: 'New Question',
 				answers: [
-					{'number' : 10, 'text' : 'testext'}
+					{'number' : 1, 'text' : 'Answer 1'},
+					{'number' : 2, 'text' : 'Answer 2'},
+					{'number' : 3, 'text' : 'Answer 3'}
 				]
 			});
 
@@ -89,4 +110,10 @@ angular
 		list.removeEntry( recordName );
 		deepstream.record.getRecord( recordName ).delete();
 	};
+
+	$scope.makeEditable = function() {
+		$scope.editable != $scope.editable;
+		console.log("ey");
+	}
+
 });
