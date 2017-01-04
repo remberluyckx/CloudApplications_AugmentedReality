@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/topLayout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="horizontal"
+    android:layout_marginTop="100dp">
+
+
+    <FrameLayout
+        android:id="@+id/mainLayout"
+        android:layout_width="640px"
+        android:layout_height="480px"
+        android:orientation="vertical">
+
+
+    </FrameLayout>
+
+    <TextView
+        android:layout_width="274dp"
+        android:layout_height="wrap_content"
+        android:text="Markers detected: none"
+        android:id="@+id/textView"
+        android:layout_weight="0.27"
+        android:layout_marginTop="100dp" />
+
+    <Button
+        android:text="Scan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button"
+        android:visibility="visible" />
+
+</LinearLayout>
