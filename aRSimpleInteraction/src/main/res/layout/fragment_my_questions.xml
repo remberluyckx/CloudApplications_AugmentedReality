@@ -9,7 +9,6 @@
         android:layout_height="wrap_content"
         android:text="My questions"
         android:id="@+id/txtTest"
-        android:background="@android:color/holo_blue_light"
         android:textColor="@android:color/black"
         android:textSize="30sp"
         android:layout_marginLeft="80dp"

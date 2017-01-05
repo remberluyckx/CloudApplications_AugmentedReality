@@ -7,8 +7,11 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.content.Context;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -18,11 +21,11 @@ import android.view.ViewGroup;
 import android.support.v4.widget.DrawerLayout;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
-
+import android.widget.Toast;
 
 
 public class MainActivity extends Activity
-        implements NavigationDrawerFragment.NavigationDrawerCallbacks {
+        implements NavigationDrawerFragment.NavigationDrawerCallbacks, MyQuestionsFragment.OnFragmentInteractionListener, NewQuestionFragment.OnFragmentInteractionListener {
 
     /**
      * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
@@ -32,6 +35,9 @@ public class MainActivity extends Activity
      * Used to store the last screen title. For use in {@link #restoreActionBar()}.
      */
     private CharSequence mTitle;
+
+    SQLiteDatabase mydatabase;
+    DBHandler dbHandler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +52,10 @@ public class MainActivity extends Activity
         mNavigationDrawerFragment.setUp(
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
+
+        mydatabase = openOrCreateDatabase("questionsDB",MODE_PRIVATE,null);
+        mydatabase.execSQL("CREATE TABLE IF NOT EXISTS Questions(Question TEXT,Answer1 TEXT,Answer2 TEXT,Answer3 TEXT,Answer4 TEXT,Answer5 TEXT);");
+        dbHandler = new DBHandler(this);
     }
 
     @Override
@@ -87,6 +97,16 @@ public class MainActivity extends Activity
         actionBar.setTitle(mTitle);
     }
 
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+        // Do different stuff
+        CharSequence text = "hey!";
+        int duration = Toast.LENGTH_SHORT;
+        Toast toast = Toast.makeText(getApplicationContext(), text, duration);
+        toast.show();
+
+    }
+
     /**
      * A placeholder fragment containing a simple view.
      */
@@ -119,12 +139,24 @@ public class MainActivity extends Activity
             return rootView;
         }
 
-        @Override
-        public void onAttach(Activity activity) {
-            super.onAttach(activity);
-            ((MainActivity) activity).onSectionAttached(
-                    getArguments().getInt(ARG_SECTION_NUMBER));
-        }
+       @Override
+       public void onAttach(Activity activity) {
+           super.onAttach(activity);
+           ((MainActivity) activity).onSectionAttached(
+                   getArguments().getInt(ARG_SECTION_NUMBER));
+       }
+    }
+
+    public void onButtonClicked(Question question) {
+        String myquestion = question.getQuestion();
+        String answer1 = question.getAnswer1();
+        String answer2 = question.getAnswer2();
+        String answer3 = question.getAnswer3();
+        String answer4 = question.getAnswer4();
+        String answer5 = question.getAnswer5();
+
+        dbHandler.addQuestion(new Question(dbHandler.getQuestionsCount()+1, myquestion, answer1, answer2, answer3, answer4, answer5));
+        //mydatabase.execSQL("INSERT INTO Questions VALUES ('" + question.getQuestion() + "','" + testvar2 + "','\" + testvar3 + \"','\" + testvar4 + \"','\" + testvar5 + \"','\" + testvar6 + \"');");
     }
 
 }

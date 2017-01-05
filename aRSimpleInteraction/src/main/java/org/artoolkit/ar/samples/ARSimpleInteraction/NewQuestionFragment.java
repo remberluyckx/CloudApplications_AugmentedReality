@@ -1,12 +1,17 @@
 package org.artoolkit.ar.samples.ARSimpleInteraction;
 
+import android.app.Activity;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 
 /**
@@ -23,6 +28,13 @@ public class NewQuestionFragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
+    EditText editQuestion;
+    EditText editAnswer1;
+    EditText editAnswer2;
+    EditText editAnswer3;
+    EditText editAnswer4;
+    EditText editAnswer5;
+    Button btnCreate;
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
@@ -64,13 +76,53 @@ public class NewQuestionFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_new_question, container, false);
+        //return inflater.inflate(R.layout.fragment_new_question, container, false);
+        View v = inflater.inflate(R.layout.fragment_new_question, container, false);
+        editQuestion = (EditText) v.findViewById(R.id.editQuestion);
+        editAnswer1 = (EditText) v.findViewById(R.id.editA1);
+        editAnswer2 = (EditText) v.findViewById(R.id.editA2);
+        editAnswer3 = (EditText) v.findViewById(R.id.editA3);
+        editAnswer4 = (EditText) v.findViewById(R.id.editA4);
+        editAnswer5 = (EditText) v.findViewById(R.id.editA5);
+        btnCreate = (Button) v.findViewById(R.id.btnCreate);
+
+        btnCreate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                switch (v.getId()) {
+                    case R.id.btnCreate:
+                        MainActivity mainActivity = (MainActivity)getActivity();
+                        int count = mainActivity.dbHandler.getQuestionsCount() + 1;
+                        String question = editQuestion.getText().toString();
+                        String a1 = editAnswer1.getText().toString();
+                        String a2 = editAnswer2.getText().toString();
+                        String a3 = editAnswer3.getText().toString();
+                        String a4 = editAnswer4.getText().toString();
+                        String a5 = editAnswer5.getText().toString();
+                        Question newQuestion = new Question(count, question, a1, a2, a3, a4, a5);
+
+                        CharSequence text = "Question created!";
+                        int duration = Toast.LENGTH_SHORT;
+                        Toast toast = Toast.makeText(v.getContext(), text, duration);
+                        toast.show();
+
+                        if (mListener != null) {
+                            mListener.onButtonClicked(newQuestion);
+                        }
+
+                        break;
+                }
+            }
+        });
+
+        return v;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
+    public void onButtonPressed(Question question) {
         if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
+            //mListener.onFragmentInteraction(uri);
+            mListener.onButtonClicked(question);
         }
     }
 
@@ -83,6 +135,12 @@ public class NewQuestionFragment extends Fragment {
             throw new RuntimeException(context.toString()
                     + " must implement OnFragmentInteractionListener");
         }
+    }
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        mListener = (OnFragmentInteractionListener) activity;
     }
 
     @Override
@@ -103,6 +161,7 @@ public class NewQuestionFragment extends Fragment {
      */
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
-        void onFragmentInteraction(Uri uri);
+        //void onFragmentInteraction(Uri uri);
+        void onButtonClicked(Question question);
     }
 }
