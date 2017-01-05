@@ -1,0 +1,92 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="org.artoolkit.ar.samples.ARSimpleInteraction.NewQuestionFragment">
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/editA5"
+        android:background="@android:color/background_light"
+        android:layout_marginTop="400dp"
+        android:layout_marginLeft="50dp"
+        android:hint="Answer 5" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/editA3"
+        android:background="@android:color/background_light"
+        android:layout_marginTop="300dp"
+        android:layout_marginLeft="50dp"
+        android:hint="Answer 3" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Question"
+        android:textColor="@android:color/background_dark"
+        android:textSize="30sp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="15dp"
+        android:id="@+id/txtTitle" />
+
+    <EditText
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:ems="10"
+        android:id="@+id/editQuestion"
+        android:background="@android:color/background_light"
+        android:layout_marginTop="80dp"
+        android:height="80dp"
+        android:layout_marginLeft="10dp"
+        android:layout_width="305dp"
+        android:hint="Question" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/editA1"
+        android:background="@android:color/background_light"
+        android:layout_marginTop="200dp"
+        android:layout_marginLeft="50dp"
+        android:hint="Answer 1" />
+
+    <Button
+        android:text="Create"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnCreate"
+        android:layout_marginTop="450dp"
+        android:layout_marginLeft="105dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/editA2"
+        android:background="@android:color/background_light"
+        android:layout_marginTop="250dp"
+        android:layout_marginLeft="50dp"
+        android:hint="Answer 2" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/editA4"
+        android:background="@android:color/background_light"
+        android:layout_marginTop="350dp"
+        android:layout_marginLeft="50dp"
+        android:hint="Answer 4" />
+
+</FrameLayout>

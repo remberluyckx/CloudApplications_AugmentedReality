@@ -1,0 +1,25 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="org.artoolkit.ar.samples.ARSimpleInteraction.MyQuestionsFragment">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="My questions"
+        android:id="@+id/txtTest"
+        android:background="@android:color/holo_blue_light"
+        android:textColor="@android:color/black"
+        android:textSize="30sp"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="15dp" />
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/background_light"
+        android:layout_marginTop="75dp"
+        android:id="@+id/listQuestions" />
+
+</FrameLayout>
