@@ -59,10 +59,6 @@
             <li ng-class="{'active': $parent.selectedQuestion === question.name }"
 						ng-click="selectQuestion( question.name )"
 						ng-repeat="question in questions">
-				    	<!--em>
-						<span ng-bind="user.get('firstname')"></span>
-						<span ng-bind="user.get('lastname')"></span>
-				    	</em-->
               <a href='#' ng-bind="question.get('title')"></a>
 			    		<div class="delete-button fa fa-remove" ng-click="deleteUser( user.name )"></div>
 			    	</li>
@@ -70,64 +66,23 @@
           <ul class="nav nav-sidebar">
             <li class="active"><a href="#" ng-click="addQuestion()">Add Question <span class="sr-only">(current)</span></a></li>
           </ul>
-          <!--
-          <ul class="nav nav-sidebar">
-            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
-            <li><a href="#">Reports</a></li>
-            <li><a href="#">Analytics</a></li>
-            <li><a href="#">Export</a></li>
-          </ul>
-          <ul class="nav nav-sidebar">
-            <li><a href="">Nav item</a></li>
-            <li><a href="">Nav item again</a></li>
-            <li><a href="">One more nav</a></li>
-            <li><a href="">Another nav item</a></li>
-            <li><a href="">More navigation</a></li>
-          </ul>
-          <ul class="nav nav-sidebar">
-            <li><a href="">Nav item again</a></li>
-            <li><a href="">One more nav</a></li>
-            <li><a href="">Another nav item</a></li>
-          </ul>
-          -->
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" ng-controller="question">
-          <!--h1 class="page-header">Dashboard</h1>
-
-          <div class="row placeholders">
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>Label</h4>
-              <span class="text-muted">Something else</span>
-            </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>Label</h4>
-              <span class="text-muted">Something else</span>
-            </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>Label</h4>
-              <span class="text-muted">Something else</span>
-            </div>
-            <div class="col-xs-6 col-sm-3 placeholder">
-              <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
-              <h4>Label</h4>
-              <span class="text-muted">Something else</span>
-            </div>
-          </div-->
-
           <h2 class="sub-header"><a href="#" editable-text="title">{{ title }}</a></h2>
             <div id="view" ng-hide="editable">
-            <div ng-repeat="answer in answers">
-              <p>{{ answer.number + ":  " + answer.text }}</p>
-            </div>
+              <p>1: {{ answer1 }}</p>
+              <p>2: {{ answer2 }}</p>
+              <p>3: {{ answer3 }}</p>
+              <p>4: {{ answer4 }}</p>
+              <p>5: {{ answer5 }}</p>
             </div>
 
-            <div id="edit" ng-show="editable">
-            <div ng-repeat="answer in answers">
-                {{ answer.number + ":  "}}<input type="text" placeholder="{{ answer.text }}">
-            </div>
+            <div id="edit" ng-show="editable" class="fields">
+                <input ng-model="answer1" type="text" id="answer1"><br>
+                <input ng-model="answer2" type="text" id="answer2"><br>
+                <input ng-model="answer3" type="text" id="answer3"><br>
+                <input ng-model="answer4" type="text" id="answer4"><br>
+                <input ng-model="answer5" type="text" id="answer5"><br>
             </div>
 
             <button type="button" class="btn btn-default" ng-click="makeEditable()">Edit</button>

@@ -37,7 +37,11 @@ angular
 
 	var fields = [
             'title',
-			'answers'
+			'answer1',
+            'answer2',
+            'answer3',
+            'answer4',
+            'answer5',
 		];
 
 	$scope.editable = true;
@@ -91,11 +95,8 @@ angular
 			.getRecord( name )
 			.set({
 				title: 'New Question',
-				answers: [
-					{'number' : 1, 'text' : 'Answer 1'},
-					{'number' : 2, 'text' : 'Answer 2'},
-					{'number' : 3, 'text' : 'Answer 3'}
-				]
+				answer1: 'Answer 1',
+				answer2: 'Answer 2'
 			});
 
 		list.addEntry( name );
