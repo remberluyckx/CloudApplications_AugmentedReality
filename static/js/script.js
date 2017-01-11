@@ -3,6 +3,12 @@
 
 angular
 .module( 'ar-webend', ["xeditable", "chart.js"] )
+	.config(['ChartJsProvider', function (ChartJsProvider) {
+		// Configure all charts
+		ChartJsProvider.setOptions({
+			responsive: false
+		});
+	}])
 .run(function(editableOptions) {
 	editableOptions.theme = 'bs3'; // bootstrap3 theme. Can be also 'bs2', 'default'
 })
@@ -138,5 +144,8 @@ angular
 		];
     
     bindFields( $scope, record, fields );
+
+	$scope.labels = ["Antwoord A", "Antwoord B", "Antwoord C", "Antwoord D", "Antwoord E"];
+	$scope.data = [fields[1], fields[2], fields[3], fields[4], fields[5]];
 })
 ;
