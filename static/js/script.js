@@ -173,7 +173,7 @@ angular
 						'rgba(153, 102, 255, 1)',
 						'rgba(255, 159, 64, 1)'
 					],
-					borderWidth: 1
+					borderWidth: 0.5
 				}]
 			},
 			options: {
@@ -181,7 +181,7 @@ angular
 				legend: {
 					display: true,
 					labels: {
-						fontColor: 'rgb(255, 99, 132)'
+						fontColor: 'black'
 					}
 				}
 			}
