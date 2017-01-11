@@ -92,19 +92,19 @@ public class ARSimpleInteraction extends ARActivity {
                 if (simpleRenderer.markersDetected.size() == 0)
                     markers.setText("Markers detected: none"); // alle elementen in lijst hier zetten
                 else if (simpleRenderer.markersDetected.size() == 1) {
-                    markers.setText("Markers detected: " + simpleRenderer.markersDetected.get(0));
+                    markers.setText("1 Marker detected: " + simpleRenderer.markersDetected.get(0));
                 }
                 else if (simpleRenderer.markersDetected.size() == 2) {
-                    markers.setText("Markers detected: " + simpleRenderer.markersDetected.get(0) + ", " + simpleRenderer.markersDetected.get(1));
+                    markers.setText("2 Markers detected: " + simpleRenderer.markersDetected.get(0) + ", " + simpleRenderer.markersDetected.get(1));
                 }
                 else if (simpleRenderer.markersDetected.size() == 3) {
-                    markers.setText("Markers detected: " + simpleRenderer.markersDetected.get(0) + ", " + simpleRenderer.markersDetected.get(1) + ", " + simpleRenderer.markersDetected.get(2));
+                    markers.setText("3 Markers detected: " + simpleRenderer.markersDetected.get(0) + ", " + simpleRenderer.markersDetected.get(1) + ", " + simpleRenderer.markersDetected.get(2));
                 }
                 else if (simpleRenderer.markersDetected.size() == 4) {
-                    markers.setText("Markers detected: " + simpleRenderer.markersDetected.get(0) + ", " + simpleRenderer.markersDetected.get(1) + ", " + simpleRenderer.markersDetected.get(2) + ", " + simpleRenderer.markersDetected.get(3));
+                    markers.setText("4 Markers detected: " + simpleRenderer.markersDetected.get(0) + ", " + simpleRenderer.markersDetected.get(1) + ", " + simpleRenderer.markersDetected.get(2) + ", " + simpleRenderer.markersDetected.get(3));
                 }
                 else if (simpleRenderer.markersDetected.size() == 5) {
-                    markers.setText("Markers detected: " + simpleRenderer.markersDetected.get(0) + ", " + simpleRenderer.markersDetected.get(1) + ", " + simpleRenderer.markersDetected.get(2) + ", " + simpleRenderer.markersDetected.get(3) + ", " + simpleRenderer.markersDetected.get(4));
+                    markers.setText("5 Markers detected: " + simpleRenderer.markersDetected.get(0) + ", " + simpleRenderer.markersDetected.get(1) + ", " + simpleRenderer.markersDetected.get(2) + ", " + simpleRenderer.markersDetected.get(3) + ", " + simpleRenderer.markersDetected.get(4));
                 }
                 else {markers.setText("Too much items in list");}
             }

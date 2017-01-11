@@ -83,11 +83,6 @@ public class SimpleInteractiveRenderer extends ARRenderer {
 
 
     public List<String> markersDetected = new ArrayList<String>();
-    /*public Boolean a = FALSE;
-    public Boolean b = FALSE;
-    public Boolean c = FALSE;
-    public Boolean d = FALSE;
-    public Boolean g = FALSE;*/
 
     private Cube cube = new Cube(40.0f, 0.0f, 0.0f, 20.0f);
     private float angle = 0.0f;
@@ -161,16 +156,7 @@ public class SimpleInteractiveRenderer extends ARRenderer {
                 }
             }
         }
-            //if (spinning) angle += 5.0f;
 
-        /*else {
-            for ( int i = 0;  i < markersDetected.size(); i++) {
-                String tempName = markersDetected.get(i);
-                if(tempName.equals("A")) {
-                    markersDetected.remove(i);
-                }
-            }
-        }*/
         if (ARToolKit.getInstance().queryMarkerVisible(markerIDb2)) {
 
             gl.glLoadMatrixf(ARToolKit.getInstance().queryMarkerTransformation(markerIDb2), 0);
