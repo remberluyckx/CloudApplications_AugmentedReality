@@ -117,4 +117,26 @@ angular
 		console.log("ey");
 	}
 
-});
+})
+.controller( 'results', function( $scope, deepstream, bindFields ){
+    record = deepstream.record.getRecord('results');
+    window.skoop = $scope;
+    
+    var fields = [
+            'title',
+			'answer1votes',
+            'answer2votes',
+            'answer3votes',
+            'answer4votes',
+            'answer5votes',
+            'active',
+			'answer1',
+            'answer2',
+            'answer3',
+            'answer4',
+            'answer5',
+		];
+    
+    bindFields( $scope, record, fields );
+})
+;

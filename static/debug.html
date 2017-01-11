@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/deepstream.io-client-js/2.1.1/deepstream.js"></script>
+  </head>
+  <body>
+      Title: <input class="title" type="text" id=title/><br>
+      Answer1: <input class="answer1" type="text" /><br>
+      Answer2: <input class="answer2" type="text" /><br>
+      Answer3: <input class="answer3" type="text" /><br>
+      Answer4: <input class="answer4" type="text" /><br>
+      Answer5: <input class="answer5" type="text" /><br>
+      Pc1: <input class="answer1votes" type="number" /><br>
+      Pc2: <input class="answer2votes" type="number" /><br>
+      Pc3: <input class="answer3votes" type="number" /><br>
+      Pc4: <input class="answer4votes" type="number" /><br>
+      Pc5: <input class="answer5votes" type="number" /><br>
+      Active: <input class="active" type="checkbox" />
+      
+    <script type="text/javascript">
+        var client = deepstream('localhost:6020').login( {login: "devuser"} );
+        var record = client.record.getRecord('results');
+        var scope = { };
+       
+        
+        document.querySelectorAll('input').forEach(function(item, index) {
+            var str = item.className;
+            eval("scope." + str + " = item");
+            if (str == "active") {
+                eval("item.onchange = (function() {record.set('" + str + "', scope." + str + ".checked)});");
+            } else {
+            eval("item.onkeyup = (function() {record.set('" + str + "', scope." + str + ".value)});");
+            eval("item.onchange = (function() {record.set('" + str + "', scope." + str + ".value)});");
+            }
+        });
+        
+        record.subscribe(function(fields) {
+            console.log(fields);
+            for (var field in fields ) {
+                if ( field == "active")
+                    document.getElementsByClassName(field)[0].checked = record.get(field);
+                else
+                    document.getElementsByClassName(field)[0].value = record.get(field);
+            };
+        });
+    </script>
+  </body>
+</html>
