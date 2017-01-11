@@ -146,6 +146,19 @@ angular
     bindFields( $scope, record, fields );
 
 	$scope.labels = ["Antwoord A", "Antwoord B", "Antwoord C", "Antwoord D", "Antwoord E"];
-	$scope.data = [fields[1], fields[2], fields[3], fields[4], fields[5]];
+    
+    function updatedata(xxx) {
+        $scope.data = [
+            $scope.answer1votes,
+            $scope.answer2votes,
+            $scope.answer3votes,
+            $scope.answer4votes,
+            $scope.answer5votes
+        ];
+    }
+    
+    record.subscribe(updatedata);
+    
+    $scope.data = [1,1,1,1,1];
 })
 ;
