@@ -3,12 +3,6 @@
 
 angular
 .module( 'ar-webend', ["xeditable", "chart.js"] )
-	.config(['ChartJsProvider', function (ChartJsProvider) {
-		// Configure all charts
-		ChartJsProvider.setOptions({
-			responsive: false
-		});
-	}])
 .run(function(editableOptions) {
 	editableOptions.theme = 'bs3'; // bootstrap3 theme. Can be also 'bs2', 'default'
 })
@@ -146,7 +140,8 @@ angular
     bindFields( $scope, record, fields );
 
 	$scope.labels = ["Antwoord A", "Antwoord B", "Antwoord C", "Antwoord D", "Antwoord E"];
-    
+	var piecanvas;
+
     function updatedata(xxx) {
         $scope.data = [
             $scope.answer1votes,
@@ -155,10 +150,53 @@ angular
             $scope.answer4votes,
             $scope.answer5votes
         ];
+		piecanvas = document.getElementById("pie").getContext("2d");
+		var myChart = new Chart(piecanvas, {
+			type: 'pie',
+			data: {
+				labels: ["Antwoord A", "Antwoord B", "Antwoord C", "Antwoord D", "Antwoord E"],
+				datasets: [{
+					data: $scope.data,
+					backgroundColor: [
+						'#99ff66',
+						'#ffe066',
+						'#009999',
+						'#ff471a',
+						'#9999ff',
+						'#cc33ff'
+					],
+					borderColor: [
+						'rgba(255,99,132,1)',
+						'rgba(54, 162, 235, 1)',
+						'rgba(255, 206, 86, 1)',
+						'rgba(75, 192, 192, 1)',
+						'rgba(153, 102, 255, 1)',
+						'rgba(255, 159, 64, 1)'
+					],
+					borderWidth: 1
+				}]
+			},
+			options: {
+				responsive: false,
+				legend: {
+					display: true,
+					labels: {
+						fontColor: 'rgb(255, 99, 132)'
+					}
+				}
+			}
+		});
     }
-    
+
+	$scope.data = [$scope.answer1votes,
+		$scope.answer2votes,
+		$scope.answer3votes,
+		$scope.answer4votes,
+		$scope.answer5votes];
+
     record.subscribe(updatedata);
-    
-    $scope.data = [1,1,1,1,1];
+
+
+
 })
 ;
