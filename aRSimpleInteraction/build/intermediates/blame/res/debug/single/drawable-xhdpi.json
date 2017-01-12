@@ -4,6 +4,7 @@
         "source": "C:\\Users\\Rember\\Desktop\\ARSimpleInteractionProj\\aRSimpleInteraction\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable-xhdpi\\abc_ic_menu_moreoverflow_mtrl_alpha.png"
     },
     {
+<<<<<<< HEAD
         "merged": "C:\\Users\\detuur\\Desktop\\cloudapps\\newapp\\CloudApplications_augmentedreality\\aRSimpleInteraction\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\abc_scrubber_track_mtrl_alpha.9.png",
         "source": "C:\\Users\\detuur\\Desktop\\cloudapps\\newapp\\CloudApplications_augmentedreality\\aRSimpleInteraction\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable-xhdpi\\abc_scrubber_track_mtrl_alpha.9.png"
     },
@@ -14,6 +15,18 @@
     {
         "merged": "C:\\Users\\detuur\\Desktop\\cloudapps\\newapp\\CloudApplications_augmentedreality\\aRSimpleInteraction\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\abc_ic_menu_cut_mtrl_alpha.png",
         "source": "C:\\Users\\detuur\\Desktop\\cloudapps\\newapp\\CloudApplications_augmentedreality\\aRSimpleInteraction\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable-xhdpi\\abc_ic_menu_cut_mtrl_alpha.png"
+=======
+        "merged": "C:\\Users\\Rember\\Desktop\\ARSimpleInteractionProj\\aRSimpleInteraction\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\abc_switch_track_mtrl_alpha.9.png",
+        "source": "C:\\Users\\Rember\\Desktop\\ARSimpleInteractionProj\\aRSimpleInteraction\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable-xhdpi\\abc_switch_track_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Rember\\Desktop\\ARSimpleInteractionProj\\aRSimpleInteraction\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\abc_btn_switch_to_on_mtrl_00001.9.png",
+        "source": "C:\\Users\\Rember\\Desktop\\ARSimpleInteractionProj\\aRSimpleInteraction\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable-xhdpi\\abc_btn_switch_to_on_mtrl_00001.9.png"
+    },
+    {
+        "merged": "C:\\Users\\Rember\\Desktop\\ARSimpleInteractionProj\\aRSimpleInteraction\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\abc_scrubber_control_off_mtrl_alpha.png",
+        "source": "C:\\Users\\Rember\\Desktop\\ARSimpleInteractionProj\\aRSimpleInteraction\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable-xhdpi\\abc_scrubber_control_off_mtrl_alpha.png"
+>>>>>>> 1ae0d6f8ab33fa65cd6a2d5c7a0aa999592a949e
     },
     {
         "merged": "C:\\Users\\detuur\\Desktop\\cloudapps\\newapp\\CloudApplications_augmentedreality\\aRSimpleInteraction\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi\\abc_list_selector_disabled_holo_dark.9.png",

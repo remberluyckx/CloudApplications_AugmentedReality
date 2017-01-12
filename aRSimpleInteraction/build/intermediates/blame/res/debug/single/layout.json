@@ -2,6 +2,7 @@
     {
         "merged": "C:\\Users\\Rember\\Desktop\\ARSimpleInteractionProj\\aRSimpleInteraction\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_bar.xml",
         "source": "C:\\Users\\Rember\\Desktop\\ARSimpleInteractionProj\\aRSimpleInteraction\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_action_mode_bar.xml"
+<<<<<<< HEAD
     },
     {
         "merged": "C:\\Users\\detuur\\Desktop\\cloudapps\\newapp\\CloudApplications_augmentedreality\\aRSimpleInteraction\\build\\intermediates\\res\\merged\\debug\\layout\\notification_media_cancel_action.xml",
@@ -170,6 +171,12 @@
     {
         "merged": "C:\\Users\\detuur\\Desktop\\cloudapps\\newapp\\CloudApplications_augmentedreality\\aRSimpleInteraction\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_checkbox.xml",
         "source": "C:\\Users\\detuur\\Desktop\\cloudapps\\newapp\\CloudApplications_augmentedreality\\aRSimpleInteraction\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_list_menu_item_checkbox.xml"
+=======
+>>>>>>> 1ae0d6f8ab33fa65cd6a2d5c7a0aa999592a949e
+    },
+    {
+        "merged": "C:\\Users\\Rember\\Desktop\\ARSimpleInteractionProj\\aRSimpleInteraction\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_item_material.xml",
+        "source": "C:\\Users\\Rember\\Desktop\\ARSimpleInteractionProj\\aRSimpleInteraction\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\select_dialog_item_material.xml"
     },
     {
         "merged": "C:\\Users\\Rember\\Desktop\\ARSimpleInteractionProj\\aRSimpleInteraction\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_layout.xml",

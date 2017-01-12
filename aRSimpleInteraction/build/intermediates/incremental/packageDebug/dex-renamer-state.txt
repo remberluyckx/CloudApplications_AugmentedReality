@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 #Thu Jan 12 07:29:12 CET 2017
 base.0=C\:\\Users\\detuur\\Desktop\\cloudapps\\newapp\\CloudApplications_augmentedreality\\aRSimpleInteraction\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main
+=======
+#Thu Jan 12 07:21:02 CET 2017
+base.0=C\:\\Users\\Rember\\Desktop\\ARSimpleInteractionProj\\aRSimpleInteraction\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main
+>>>>>>> 1ae0d6f8ab33fa65cd6a2d5c7a0aa999592a949e
 renamed.0=classes.dex
 file.0=C\:\\Users\\detuur\\Desktop\\cloudapps\\newapp\\CloudApplications_augmentedreality\\aRSimpleInteraction\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main\\classes.dex
