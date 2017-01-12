@@ -1,10 +1,18 @@
 [
     {
+        "merged": "C:\\Users\\detuur\\Desktop\\cloudapps\\newapp\\CloudApplications_augmentedreality\\aRSimpleInteraction\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_action_bar_item_background_material.xml",
+        "source": "C:\\Users\\detuur\\Desktop\\cloudapps\\newapp\\CloudApplications_augmentedreality\\aRSimpleInteraction\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable-v21\\abc_action_bar_item_background_material.xml"
+    },
+    {
         "merged": "C:\\Users\\Rember\\Desktop\\ARSimpleInteractionProj\\aRSimpleInteraction\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_action_bar_item_background_material.xml",
         "source": "C:\\Users\\Rember\\Desktop\\ARSimpleInteractionProj\\aRSimpleInteraction\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable-v21\\abc_action_bar_item_background_material.xml"
     },
     {
         "merged": "C:\\Users\\Rember\\Desktop\\ARSimpleInteractionProj\\aRSimpleInteraction\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_btn_colored_material.xml",
         "source": "C:\\Users\\Rember\\Desktop\\ARSimpleInteractionProj\\aRSimpleInteraction\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable-v21\\abc_btn_colored_material.xml"
+    },
+    {
+        "merged": "C:\\Users\\detuur\\Desktop\\cloudapps\\newapp\\CloudApplications_augmentedreality\\aRSimpleInteraction\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_btn_colored_material.xml",
+        "source": "C:\\Users\\detuur\\Desktop\\cloudapps\\newapp\\CloudApplications_augmentedreality\\aRSimpleInteraction\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\drawable-v21\\abc_btn_colored_material.xml"
     }
 ]

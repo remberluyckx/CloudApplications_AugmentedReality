@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="C:\Users\Rember\Desktop\ARSimpleInteractionProj\aRSimpleInteraction\src\main\shaders"/></dataSet><dataSet config="debug"><source path="C:\Users\Rember\Desktop\ARSimpleInteractionProj\aRSimpleInteraction\src\debug\shaders"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="C:\Users\detuur\Desktop\cloudapps\newapp\CloudApplications_augmentedreality\aRSimpleInteraction\src\main\shaders"/></dataSet><dataSet config="debug"><source path="C:\Users\detuur\Desktop\cloudapps\newapp\CloudApplications_augmentedreality\aRSimpleInteraction\src\debug\shaders"/></dataSet></merger>

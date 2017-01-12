@@ -34,7 +34,7 @@ public class DetailActivity extends Activity {
         viewA5 = (TextView) findViewById(R.id.answer5View);
         scan = (Button) findViewById(R.id.btnScan);
         db = new DBHandler(this);
-        Cursor resultSet = db.getReadableDatabase().rawQuery("Select * from Questions",null);
+        Cursor resultSet = db.getQuestions();
 
         if (resultSet.moveToPosition(selected)) {
             String question = resultSet.getString(1);

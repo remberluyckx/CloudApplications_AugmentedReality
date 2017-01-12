@@ -1,1 +1,1 @@
-include ':aRSimpleInteraction', ':aRBaseLib'
+include ':aRSimpleInteraction', ':aRBaseLib', ':deepstream.io-client-java'

@@ -9,6 +9,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -22,6 +23,12 @@ import android.support.v4.widget.DrawerLayout;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.gson.JsonObject;
+
+import io.deepstream.DeepstreamClient;
+import io.deepstream.LoginResult;
+import io.deepstream.Record;
 
 
 public class MainActivity extends Activity
@@ -38,11 +45,20 @@ public class MainActivity extends Activity
 
     SQLiteDatabase mydatabase;
     DBHandler dbHandler;
+    DBHandlerNoSql dataHandler;
+    private LoginTask AuthTask = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //Init DataHandler
+        dataHandler = new DBHandlerNoSql(this);
+
+        //Init Deepstream
+        attemptLogin();
+        //dataHandler.emitInactive();
 
         mNavigationDrawerFragment = (NavigationDrawerFragment)
                 getFragmentManager().findFragmentById(R.id.navigation_drawer);
@@ -159,4 +175,59 @@ public class MainActivity extends Activity
         //mydatabase.execSQL("INSERT INTO Questions VALUES ('" + question.getQuestion() + "','" + testvar2 + "','\" + testvar3 + \"','\" + testvar4 + \"','\" + testvar5 + \"','\" + testvar6 + \"');");
     }
 
+    private void attemptLogin() {
+        if (AuthTask != null) {
+            return;
+        }
+
+        // Store values at the time of the login attempt.
+        String user ="devuser";
+        String password = "";
+
+        boolean cancel = false;
+        View focusView = null;
+
+        AuthTask = new LoginTask(user, password);
+        AuthTask.execute((Void) null);
+    }
+
+
+    public class LoginTask extends AsyncTask<Void, Void, Boolean> {
+        private final String mEmail;
+        private final String mPassword;
+
+        LoginTask(String email, String password) {
+            mEmail = email;
+            mPassword = password;
+        }
+
+        @Override
+        protected Boolean doInBackground(Void... params) {
+            DeepstreamClient client = DeepstreamService.getInstance().getDeepstreamClient();
+            try {
+                JsonObject authData = new JsonObject();
+                authData.addProperty( "username", mEmail );
+                authData.addProperty( "password", mPassword );
+                DeepstreamService.getInstance().setUserName( mEmail );
+                LoginResult loginResult = client.login( authData );
+//                Log.d("PLSFIX", "about to getrecord 1");
+//                client.record.getRecord("results");
+//                Log.d("PLSFIX","got record 1");
+                return loginResult.loggedIn();
+            } catch (Exception e) {
+                e.printStackTrace();
+                return false;
+            }
+        }
+
+        @Override
+        protected void onPostExecute(final Boolean success) {
+            AuthTask = null;
+        }
+
+        @Override
+        protected void onCancelled() {
+            AuthTask = null;
+        }
+    }
 }

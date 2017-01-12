@@ -48,6 +48,10 @@ public class DBHandler extends SQLiteOpenHelper {
         onCreate(db);
     }
 
+    public Cursor getQuestions() {
+        return this.getReadableDatabase().rawQuery("Select * from Questions",null);
+    }
+
     // Adding new shop
     public void addQuestion(Question question) {
         SQLiteDatabase db = this.getWritableDatabase();

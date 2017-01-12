@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="aRBaseLib-unspecified">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/aRSimpleInteraction/build/intermediates/exploded-aar/ARSimpleInteractionProj/aRBaseLib/unspecified/jars/classes.jar!/" />
-      <root url="file://$PROJECT_DIR$/aRSimpleInteraction/build/intermediates/exploded-aar/ARSimpleInteractionProj/aRBaseLib/unspecified/res" />
+      <root url="jar://$PROJECT_DIR$/aRSimpleInteraction/build/intermediates/exploded-aar/CloudApplications_augmentedreality/aRBaseLib/unspecified/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/aRSimpleInteraction/build/intermediates/exploded-aar/CloudApplications_augmentedreality/aRBaseLib/unspecified/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

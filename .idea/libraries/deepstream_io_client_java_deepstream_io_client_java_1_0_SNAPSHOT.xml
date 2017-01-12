@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="deepstream.io-client-java.deepstream.io-client-java-1.0-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/deepstream.io-client-java/build/libs/deepstream.io-client-java-1.0-SNAPSHOT.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
