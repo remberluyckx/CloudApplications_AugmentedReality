@@ -79,6 +79,12 @@ public class SimpleInteractiveRenderer extends ARRenderer {
     private int markerIDc1 = -1;
     private int markerIDc2 = -1;
     private int markerIDc3 = -1;
+    private int markerIDd1 = -1;
+    private int markerIDd2 = -1;
+    private int markerIDd3 = -1;
+    private int markerIDe1 = -1;
+    private int markerIDe2 = -1;
+    private int markerIDe3 = -1;
 
 
 
@@ -104,6 +110,12 @@ public class SimpleInteractiveRenderer extends ARRenderer {
         markerIDc1 = ARToolKit.getInstance().addMarker("single;Data/c1.patt;80");
         markerIDc2 = ARToolKit.getInstance().addMarker("single;Data/c2.patt;80");
         markerIDc3 = ARToolKit.getInstance().addMarker("single;Data/c3.patt;80");
+        markerIDd1 = ARToolKit.getInstance().addMarker("single;Data/d1.patt;80");
+        markerIDd2 = ARToolKit.getInstance().addMarker("single;Data/d2.patt;80");
+        markerIDd3 = ARToolKit.getInstance().addMarker("single;Data/d3.patt;80");
+        markerIDe1 = ARToolKit.getInstance().addMarker("single;Data/e1.patt;80");
+        markerIDe2 = ARToolKit.getInstance().addMarker("single;Data/e2.patt;80");
+        markerIDe3 = ARToolKit.getInstance().addMarker("single;Data/e3.patt;80");
 
         //if (markerIDA < 0) return false;
 
@@ -377,6 +389,174 @@ public class SimpleInteractiveRenderer extends ARRenderer {
             for ( int i = 0;  i < markersDetected.size(); i++) {
                 String tempName = markersDetected.get(i);
                 if(tempName.equals("a3")) {
+                    markersDetected.remove(i);
+                }
+            }
+        }
+        if (ARToolKit.getInstance().queryMarkerVisible(markerIDd1)) {
+
+            gl.glLoadMatrixf(ARToolKit.getInstance().queryMarkerTransformation(markerIDd1), 0);
+
+            gl.glPushMatrix();
+            gl.glRotatef(angle, 0.0f, 0.0f, 1.0f);
+            cube.draw(gl);
+            gl.glPopMatrix();
+            Boolean temp = TRUE;
+            for ( int i = 0;  i < markersDetected.size(); i++) {
+                String tempName = markersDetected.get(i);
+                if(tempName.equals("d1")) {
+                    temp = FALSE;
+                }
+            }
+            if (temp) {
+                markersDetected.add("d1");
+            }
+            //if (spinning) angle += 5.0f;
+        }
+        else {
+            for ( int i = 0;  i < markersDetected.size(); i++) {
+                String tempName = markersDetected.get(i);
+                if(tempName.equals("d1")) {
+                    markersDetected.remove(i);
+                }
+            }
+        }
+        if (ARToolKit.getInstance().queryMarkerVisible(markerIDd2)) {
+
+            gl.glLoadMatrixf(ARToolKit.getInstance().queryMarkerTransformation(markerIDd2), 0);
+
+            gl.glPushMatrix();
+            gl.glRotatef(angle, 0.0f, 0.0f, 1.0f);
+            cube.draw(gl);
+            gl.glPopMatrix();
+            Boolean temp = TRUE;
+            for ( int i = 0;  i < markersDetected.size(); i++) {
+                String tempName = markersDetected.get(i);
+                if(tempName.equals("d2")) {
+                    temp = FALSE;
+                }
+            }
+            if (temp) {
+                markersDetected.add("d2");
+            }
+            //if (spinning) angle += 5.0f;
+        }
+        else {
+            for ( int i = 0;  i < markersDetected.size(); i++) {
+                String tempName = markersDetected.get(i);
+                if(tempName.equals("d2")) {
+                    markersDetected.remove(i);
+                }
+            }
+        }
+        if (ARToolKit.getInstance().queryMarkerVisible(markerIDd3)) {
+
+            gl.glLoadMatrixf(ARToolKit.getInstance().queryMarkerTransformation(markerIDd3), 0);
+
+            gl.glPushMatrix();
+            gl.glRotatef(angle, 0.0f, 0.0f, 1.0f);
+            cube.draw(gl);
+            gl.glPopMatrix();
+            Boolean temp = TRUE;
+            for ( int i = 0;  i < markersDetected.size(); i++) {
+                String tempName = markersDetected.get(i);
+                if(tempName.equals("d3")) {
+                    temp = FALSE;
+                }
+            }
+            if (temp) {
+                markersDetected.add("d3");
+            }
+            //if (spinning) angle += 5.0f;
+        }
+        else {
+            for ( int i = 0;  i < markersDetected.size(); i++) {
+                String tempName = markersDetected.get(i);
+                if(tempName.equals("d3")) {
+                    markersDetected.remove(i);
+                }
+            }
+        }
+        if (ARToolKit.getInstance().queryMarkerVisible(markerIDe1)) {
+
+            gl.glLoadMatrixf(ARToolKit.getInstance().queryMarkerTransformation(markerIDe1), 0);
+
+            gl.glPushMatrix();
+            gl.glRotatef(angle, 0.0f, 0.0f, 1.0f);
+            cube.draw(gl);
+            gl.glPopMatrix();
+            Boolean temp = TRUE;
+            for ( int i = 0;  i < markersDetected.size(); i++) {
+                String tempName = markersDetected.get(i);
+                if(tempName.equals("e1")) {
+                    temp = FALSE;
+                }
+            }
+            if (temp) {
+                markersDetected.add("e1");
+            }
+            //if (spinning) angle += 5.0f;
+        }
+        else {
+            for ( int i = 0;  i < markersDetected.size(); i++) {
+                String tempName = markersDetected.get(i);
+                if(tempName.equals("e1")) {
+                    markersDetected.remove(i);
+                }
+            }
+        }
+        if (ARToolKit.getInstance().queryMarkerVisible(markerIDe2)) {
+
+            gl.glLoadMatrixf(ARToolKit.getInstance().queryMarkerTransformation(markerIDe2), 0);
+
+            gl.glPushMatrix();
+            gl.glRotatef(angle, 0.0f, 0.0f, 1.0f);
+            cube.draw(gl);
+            gl.glPopMatrix();
+            Boolean temp = TRUE;
+            for ( int i = 0;  i < markersDetected.size(); i++) {
+                String tempName = markersDetected.get(i);
+                if(tempName.equals("e2")) {
+                    temp = FALSE;
+                }
+            }
+            if (temp) {
+                markersDetected.add("e2");
+            }
+            //if (spinning) angle += 5.0f;
+        }
+        else {
+            for ( int i = 0;  i < markersDetected.size(); i++) {
+                String tempName = markersDetected.get(i);
+                if(tempName.equals("e2")) {
+                    markersDetected.remove(i);
+                }
+            }
+        }
+        if (ARToolKit.getInstance().queryMarkerVisible(markerIDe3)) {
+
+            gl.glLoadMatrixf(ARToolKit.getInstance().queryMarkerTransformation(markerIDe3), 0);
+
+            gl.glPushMatrix();
+            gl.glRotatef(angle, 0.0f, 0.0f, 1.0f);
+            cube.draw(gl);
+            gl.glPopMatrix();
+            Boolean temp = TRUE;
+            for ( int i = 0;  i < markersDetected.size(); i++) {
+                String tempName = markersDetected.get(i);
+                if(tempName.equals("e3")) {
+                    temp = FALSE;
+                }
+            }
+            if (temp) {
+                markersDetected.add("e3");
+            }
+            //if (spinning) angle += 5.0f;
+        }
+        else {
+            for ( int i = 0;  i < markersDetected.size(); i++) {
+                String tempName = markersDetected.get(i);
+                if(tempName.equals("e3")) {
                     markersDetected.remove(i);
                 }
             }

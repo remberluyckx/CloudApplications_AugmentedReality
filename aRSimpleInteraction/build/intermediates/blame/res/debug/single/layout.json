@@ -1,11 +1,11 @@
 [
     {
-        "merged": "C:\\Users\\Rember\\Desktop\\ARSimpleInteractionProj\\aRSimpleInteraction\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_item_material.xml",
-        "source": "C:\\Users\\Rember\\Desktop\\ARSimpleInteractionProj\\aRSimpleInteraction\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\select_dialog_item_material.xml"
-    },
-    {
         "merged": "C:\\Users\\Rember\\Desktop\\ARSimpleInteractionProj\\aRSimpleInteraction\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_bar.xml",
         "source": "C:\\Users\\Rember\\Desktop\\ARSimpleInteractionProj\\aRSimpleInteraction\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\abc_action_mode_bar.xml"
+    },
+    {
+        "merged": "C:\\Users\\Rember\\Desktop\\ARSimpleInteractionProj\\aRSimpleInteraction\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_item_material.xml",
+        "source": "C:\\Users\\Rember\\Desktop\\ARSimpleInteractionProj\\aRSimpleInteraction\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\layout\\select_dialog_item_material.xml"
     },
     {
         "merged": "C:\\Users\\Rember\\Desktop\\ARSimpleInteractionProj\\aRSimpleInteraction\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_layout.xml",
